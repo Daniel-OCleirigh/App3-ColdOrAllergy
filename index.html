@@ -38,6 +38,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 <script>
         var allergy_count = 0;
         var cold_count = 0;
+	var total = 6;
+	var allergyPercent = 0;
+	var coldPercent = 0;
 
 
         function allergyAdd(){
@@ -51,6 +54,11 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
         }
 
+	function calculateAllergy()
+	{
+	    allergyPercent = allergy_count / total * 100 
+	}
+	
   </script>
 
 
@@ -153,14 +161,39 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 <div class="page" id="five">
 	<div class="w3-container w3-flat-carrot">
-		<h1>Question 4</h1>
+		<h1>Question 5</h1>
 	</div>
 	
 	
 	<div id="content" class="w3-container">
 	<p>Do you have general aches and pains?</p>
 	<a href="#six" onClick = "coldAdd();" class="w3-btn w3-black"> Yes </a>	
-	<a href="#six" class="w3-btn w3-black"> No </a>
+	<a href="#six" onClick = "allergyAdd();" class="w3-btn w3-black"> No </a>
+	</div>
+</div>
+	
+<div class="page" id="six">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 6</h1>
+	</div>
+	
+	
+	<div id="content" class="w3-container">
+	<p>Is the weather cold or warm right now?</p>
+	<a href="#seven" onClick = "coldAdd();" class="w3-btn w3-black"> Cold </a>	
+	<a href="#seven" onClick = "allergyAdd();" class="w3-btn w3-black"> Warm </a>
+	</div>
+</div>
+	
+<div class="page" id="seven">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Results</h1>
+	</div>
+	
+	
+	<div id="content" class="w3-container">
+	<p>Here are your results!</p>
+
 	</div>
 </div>
 
