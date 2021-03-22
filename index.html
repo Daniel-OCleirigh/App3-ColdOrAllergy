@@ -18,10 +18,10 @@ Timothy Riedel
 triedel@utexas.edu
  
 Brief Description of Goal of Code:
-blah, blah, blah,
+To help diagnose if a persons symptoms are due to a cold or allergies.
  
 Known Issues:
-blah, blah, blah, blah
+Not a reliable examination.
 
 https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
@@ -37,9 +37,12 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 
 <script>
+	
+// The allergy_count and cold_count variables keep track of how many of the user's symptoms are due to either allergies or a cold.
+// allergyPercent and coldPercent are used to store what percent of answers were indicative of either allergies or a cold.
+	
         var allergy_count = 0;
         var cold_count = 0;
-	var total = 6;
 	var allergyPercent = 0;
 	var coldPercent = 0;
 	var resultText = document.getElementById("results");
@@ -47,7 +50,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		
 
 	
-
+// The allergyAdd() and coldAdd() functions are called each time a response is collected from the user indicating their symptom is either from allergies or a cold.
+// The functions keep track of how many of the user's symptoms are due to either allergies or a cold.
 
         function allergyAdd(){
             allergy_count = allergy_count + 1;
@@ -60,6 +64,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
         }
 
+// The result() function calculates what percent of the user's responses were indicative of allergies and what percent were indicative of a cold.
+// It then displays this result on the screen.
 	function result()
 	{
 		allergyPercent = allergy_count/6 * 100
@@ -103,8 +109,11 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 </div>
 	
 <div id="content" class="w3-container">
+
+	<!-- This is the text the user sees -->
 	<p>Are you feeling like you might have a cold but wonder if it is allergies. Answer a few short questions to find out!</p>
 	
+	<!-- This is a button that the user can press to move on to the next page -->
 	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
 	
 
@@ -117,7 +126,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 
 	
-	
+	<!-- This bit of code (and all the others bits like it in for the rest of the questions) displays the question number at the top of the screen -->
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 1</h1>
 	</div>
@@ -126,7 +135,11 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	
     	<div id="content" class="w3-container">  
+		
+	<!-- This asks the user the diagnostic question -->
 	<p>Are your eyes watery or itchy?</p>	
+	
+	<!-- These are two buttons with both answers to the question poised above. When clicked, either allergyAdd() or coldAdd() will be called -->
 	<a href="#two" onClick = "allergyAdd();" class="w3-btn w3-black"> Yes </a>	
 	<a href="#two"  onClick="coldAdd();" class="w3-btn w3-black"> No </a>
 
@@ -141,7 +154,11 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	
 	<div id="content" class="w3-container">
+		
+	<!-- This asks the user the diagnostic question -->
 	<p>Do you have a fever?</p>
+		
+	<!-- These are two buttons with both answers to the question poised above. When clicked, either allergyAdd() or coldAdd() will be called -->
 	<a href="#three" onClick = "coldAdd();" class="w3-btn w3-black"> Yes </a>	
 	<a href="#three"  onClick="allergyAdd();" class="w3-btn w3-black"> No </a>
 	</div>
@@ -205,7 +222,10 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div>
 	
 	<div id="content" class="w3-container">
+	<!-- This is the button which says "Calculate Results!". When clicked, it calles the result() function above -->
 	<a onClick = "result();" class="w3-btn w3-black"> Calculate Results! </a>
+		
+	<!-- This is a place where text will be displayed when id="result" has text associated with it. After clicking the button above, it does, and so the results are displayed -->
 	<p id="result"> </p>
 	</div>
 	
