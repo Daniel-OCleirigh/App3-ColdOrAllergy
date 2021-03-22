@@ -27,6 +27,7 @@ https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
 -->
 	
+<!-- This sets up the app to be easily viewable on many different devices -->	
    <head> 
       <title>Hello World</title>  
       <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -40,6 +41,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 // The allergy_count and cold_count variables keep track of how many of the user's symptoms are due to either allergies or a cold.
 // allergyPercent and coldPercent are used to store what percent of answers were indicative of either allergies or a cold.
+// resultText is used to store the percentages once calculated in a text format.
 	
         var allergy_count = 0;
         var cold_count = 0;
@@ -80,7 +82,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
   </script>
 
 
-
+<!-- This sets up the pages to be easily viewable -->
 <style>	
 .body {
      margin: 0em;
@@ -107,7 +109,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 <div id="header" class="w3-container w3-flat-carrot">
 	<h1>Cold or Allergies?</h1>
 </div>
-	
+
+<!-- In the id="content" area is where things that need to be displayed other than the heading goes -->
 <div id="content" class="w3-container">
 
 	<!-- This is the text the user sees -->
@@ -117,11 +120,12 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
 	
 
-	
+	<!-- This is more text the user sees -->
 	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
  	
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
 
+<!-- This is the second page that the user sees. It is the first page with a question. Everything displayed on this page is between  <div class="page"> and </div> -->
 <div class="page" id="one">
 	
 
@@ -133,7 +137,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	
 	
-	
+	<!-- In the id="content" area is where everything that need to be displayed other than the heading goes -->
     	<div id="content" class="w3-container">  
 		
 	<!-- This asks the user the diagnostic question -->
@@ -145,9 +149,13 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 	
     	</div>
+<!-- This is the end of the first page -->	
 </div>
+	
 
 <div class="page" id="two">
+	
+	<!-- This bit of code  displays the question number at the top of the screen -->
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 2</h1>
 	</div>
@@ -165,58 +173,86 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 </div>	
 	
 <div class="page" id="three">
+	
+	<!-- This bit of code  displays the question number at the top of the screen -->
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 3</h1>
 	</div>
 	
 	
 	<div id="content" class="w3-container">
+		
+	<!-- This asks the user the diagnostic question -->	
 	<p>Do you have a sore throat?</p>
+	
+	<!-- These are two buttons with both answers to the question poised above. When clicked, either allergyAdd() or coldAdd() will be called -->
 	<a href="#four" onClick = "coldAdd();" class="w3-btn w3-black"> Yes </a>	
 	<a href="#four"  onClick="allergyAdd();" class="w3-btn w3-black"> No </a>
+		
 	</div>
 </div>
 	
+	
 <div class="page" id="four">
+	
+	<!-- This bit of code  displays the question number at the top of the screen -->
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 4</h1>
 	</div>
 	
 	
 	<div id="content" class="w3-container">
+		
+	<!-- This asks the user the diagnostic question -->
 	<p>Are your symptoms seasonal or chronic?</p>
+		
+	<!-- These are two buttons with both answers to the question poised above. When clicked, either allergyAdd() or coldAdd() will be called -->	
 	<a href="#five" onClick = "allergyAdd();" class="w3-btn w3-black"> Seasonal </a>	
 	<a href="#five"  onClick="coldAdd();" class="w3-btn w3-black"> Chronic </a>
 	</div>
 </div>
 
 <div class="page" id="five">
+	
+	<!-- This bit of code  displays the question number at the top of the screen -->
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 5</h1>
 	</div>
 	
 	
 	<div id="content" class="w3-container">
+		
+	<!-- This asks the user the diagnostic question -->
 	<p>Do you have general aches and pains?</p>
+		
+	<!-- These are two buttons with both answers to the question poised above. When clicked, either allergyAdd() or coldAdd() will be called -->
 	<a href="#six" onClick = "coldAdd();" class="w3-btn w3-black"> Yes </a>	
 	<a href="#six" onClick = "allergyAdd();" class="w3-btn w3-black"> No </a>
 	</div>
 </div>
 	
 <div class="page" id="six">
+	
+	<!-- This bit of code  displays the question number at the top of the screen -->
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 6</h1>
 	</div>
 	
 	
 	<div id="content" class="w3-container">
+	
+	<!-- This asks the user the diagnostic question -->
 	<p>Is the weather cold or warm right now?</p>
+		
+	<!-- These are two buttons with both answers to the question poised above. When clicked, either allergyAdd() or coldAdd() will be called -->
 	<a href="#seven" onClick = "coldAdd();" class="w3-btn w3-black"> Cold </a>	
 	<a href="#seven" onClick = "allergyAdd();" class="w3-btn w3-black"> Warm </a>
 	</div>
 </div>
 	
 <div class="page" id="seven">
+	
+	<!-- This bit of code displays the text "Results" at the top of the page -->
 	<div class="w3-container w3-flat-carrot">
 		<h1>Results</h1>
 	</div>
@@ -235,6 +271,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 </div>
 
+<!-- This bit of code displays the text "DIY!" at the bottom of each page -->
 <footer class="w3-bottom w3-container w3-flat-carrot">
 	<p>DIY!</p>
 </footer>
